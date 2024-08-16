@@ -1,0 +1,5 @@
+<?php
+
+  // SPL AUTOLOAD REGISTER
+
+?>
