@@ -8,7 +8,7 @@
   <link href="../styles/output.css" rel="stylesheet">
 </head>
 <body>
-  <header class="bg-gray-100">
+  <header class="border-solid border-2 border-sky-500">
     <div class="container mx-auto flex flex-col items-center justify-center p-6 space-y-3">
       <h1 class="text-3xl font-medium text-center uppercase">
         Contact List RESTful API-Based CRUD Operation
@@ -26,7 +26,7 @@
 
   <main>
     <div class="mx-auto container p-6 flex items-center justify-center flex-col space-y-5 space-x-0 md:flex-row md:space-x-5 md:space-y-0">
-      <button class="bg-amber-200 p-6 font-medium rounded-md">
+      <button class="show-contact bg-amber-200 p-6 font-medium rounded-md">
         SHOW CONTACT
       </button>
 
@@ -43,7 +43,3 @@
       </button>
     </div>
   </main>
-
-  <script src="../script/handler.js"></script>
-</body>
-</html>

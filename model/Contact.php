@@ -1,8 +1,12 @@
 <?php
 
-  class Contact extends Database {
+  class ContactsModel extends Database {
     protected function getContacts() {
-      // PDO PREPARE STATEMENTS
+      $sql = "SELECT * FROM list";
+      $stmt = $this->connect()->prepare($sql);
+      $stmt->execute();
+
+      return $stmt;
     }
 
     protected function addToContacts() {
