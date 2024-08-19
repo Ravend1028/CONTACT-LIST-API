@@ -11,7 +11,6 @@
         $dns = "mysql:host=" . $this->servername . ";dbname=" . $this->dbname;
         $conn = new PDO($dns, $this->username, $this->password);
         // set the PDO error mode to exception
-        // study PDO ATTRIBUTES
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         return $conn;
       } catch(PDOException $e) {

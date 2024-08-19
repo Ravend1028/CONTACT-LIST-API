@@ -1,5 +1,7 @@
 <?php
 
+include_once('config/Database.php');
+
   class ContactsModel extends Database {
     protected function getContacts() {
       $sql = "SELECT * FROM list";

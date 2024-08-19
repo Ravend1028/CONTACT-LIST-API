@@ -1,5 +1,5 @@
 <?php
-  include '../../include/Autoloader.php';
+  include('../../include/Autoloader.php');
   header('Access-Control-Allow-Origin: *');
   header('Content-Type: application/json');
 
@@ -20,6 +20,5 @@
       array('message' => 'No Contacts Found')
     );
   }
-
 
 ?>
