@@ -27,11 +27,15 @@
   <main>
     <div class="mx-auto container p-6 flex items-center justify-center flex-col space-y-5 space-x-0 md:flex-row md:space-x-5 md:space-y-0">
       <button class="show-contact bg-amber-200 p-6 font-medium rounded-md">
-        SHOW CONTACT
+        <a href="read.php">
+          SHOW CONTACT
+        </a>
       </button>
 
       <button class="bg-lime-400 p-6 font-medium rounded-md">
-        CREATE CONTACT
+        <a href="create.php">
+          CREATE CONTACT
+        </a>
       </button>
 
       <button class="bg-fuchsia-400 p-6 font-medium rounded-md">

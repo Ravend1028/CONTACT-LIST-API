@@ -1,3 +1,5 @@
+// PREVENT DEFAULT, REDIRECT TO READ.PHP FIRST BEFORE OCCURED - TO DO
+
 document.querySelector('.show-contact').addEventListener('click', async () => { 
   const url = "http://localhost/contact%20list%20api/api/contacts/GET.php";
   try {
@@ -13,7 +15,7 @@ document.querySelector('.show-contact').addEventListener('click', async () => {
 
     json.forEach(contact => {
       const contactHTML = `
-        <div class="flex flex-row items-center justify-center mx-auto p-4 space-x-5">
+        <div class="flex flex-row items-center justify-center mx-auto p-4 space-x-5 border-y-4 border-black">
           <h2 class="text-md text-center"><span class="font-bold">Name:</span> ${contact.name}</h2>
           <p class="text-md text-center"><span class="font-bold">Number:</span> ${contact.number}</p>
         </div>

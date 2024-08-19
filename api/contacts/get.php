@@ -3,6 +3,8 @@
   header('Access-Control-Allow-Origin: *');
   header('Content-Type: application/json');
 
+  // ENSURE FIRST THAT THE REQUEST IS GET - TO DO
+
   $contacts = new ContactsView();
   $rows = $contacts->showContacts();
   $rowCount = count($rows);
