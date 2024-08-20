@@ -10,7 +10,7 @@
           <input type="text" name="name" placeholder="Enter name" class="border border-black p-2 mb-2"><br>
           <label for="number">Contact number: </label><br>
           <input type="text" name="number" placeholder="Enter number" class="border border-black p-2 mb-4"><br>
-          <input type="submit" name="submit" value="CREATE" class="block mx-auto bg-black text-white rounded p-1">
+          <input type="submit" name="submit" value="CREATE" class="block mx-auto bg-black text-white rounded p-1 cursor-pointer">
         </form>
       </div>
     </div>

@@ -1,6 +1,7 @@
 // PREVENT DEFAULT, REDIRECT TO READ.PHP FIRST BEFORE OCCURED - TO DO
+// HANDLE DIFF PAGES
 
-document.querySelector('.show-contact').addEventListener('click', async () => { 
+document.querySelector('.show-contacts').addEventListener('click', async () => { 
   const url = "http://localhost/contact%20list%20api/api/contacts/GET.php";
   try {
     const response = await fetch(url);

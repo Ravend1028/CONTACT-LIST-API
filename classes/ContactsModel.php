@@ -15,9 +15,8 @@
       $sql = "INSERT INTO list (name, number)
               VALUES (?, ?)";
       $stmt = $this->connect()->prepare($sql);
-      $stmt->execute(array($name, $number));
+      $stmt->execute([$name, $number]);
 
-      // NOT SURE ABOUT THE STRUCTURE CAN I BIND A PARAM TO PDO PREPARED STMT?
       return $stmt;
     }
 
