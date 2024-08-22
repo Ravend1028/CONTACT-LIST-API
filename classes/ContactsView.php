@@ -3,8 +3,8 @@
   class ContactsView extends ContactsModel {
     private $limit;
 
-    public function __construct() {
-      $this->limit = 0;
+    public function __construct($limit = 0) {
+      $this->limit = $limit;
     }
 
     public function showContacts() {

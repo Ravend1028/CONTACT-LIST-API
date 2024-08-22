@@ -3,24 +3,26 @@
   header('Access-Control-Allow-Origin: *');
   header('Content-Type: application/json');
 
-  // ENSURE FIRST THAT THE REQUEST IS GET - TO DO
+  if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+    $contacts = new ContactsView();
+    $rows = $contacts->showContacts();
+    $rowCount = count($rows);
 
-  $contacts = new ContactsView();
-  $rows = $contacts->showContacts();
-  $rowCount = count($rows);
+    if($rowCount > 0) {
+      $contacts = array();
+      
+      foreach($rows as $row) {
+        array_push($contacts, $row);
+      }
 
-  if($rowCount > 0) {
-    $contacts = array();
-    
-    foreach($rows as $row) {
-      array_push($contacts, $row);
+      echo json_encode($contacts);
+    } else {
+      echo json_encode(
+        array('message' => 'No Contacts Found')
+      );
     }
-
-    echo json_encode($contacts);
   } else {
-    echo json_encode(
-      array('message' => 'No Contacts Found')
-    );
+    // maybe header or error message?
   }
 
 ?>

@@ -11,22 +11,17 @@
 
     public function createContact() {
 
-      if ($this->emptyInput() == false) {
-        // error handler
+      if ($this->emptyInput() == true) {
+        echo "Input Cannot be empty.";
       }
 
       $query = $this->addToContacts($this->name, $this->number);
       $result = $query->rowCount();
 
-      if($result > 0) {
-        return $result;
-      } else {
-        // error handler
-      }
+      return $result;
     }
 
-    // VALIDATIONS HERE: MUCH BETTER IF A LOT SECURED AND ROBUST?? OR YEA 
-    // JUST FOR PRACTICE ONLY
+    // Validations Here:
 
     private function emptyInput() {
       if (empty($this->name) || empty($this->number)) {

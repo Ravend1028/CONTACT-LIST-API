@@ -735,6 +735,10 @@ video {
   padding: 0.25rem;
 }
 
+.p-1\.5 {
+  padding: 0.375rem;
+}
+
 .p-2 {
   padding: 0.5rem;
 }
@@ -749,14 +753,6 @@ video {
 
 .p-6 {
   padding: 1.5rem;
-}
-
-.p-0\.5 {
-  padding: 0.125rem;
-}
-
-.p-1\.5 {
-  padding: 0.375rem;
 }
 
 .text-center {
