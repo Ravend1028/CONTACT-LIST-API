@@ -11,6 +11,14 @@
       return $stmt;
     }
 
+    protected function getOneContact($id) {
+      $sql = "SELECT * FROM list WHERE id = ? LIMIT 1";
+      $stmt = $this->connect()->prepare($sql);
+      $stmt->execute([$id]);
+
+      return $stmt;
+    }
+
     protected function addToContacts($name, $number) {
       $sql = "INSERT INTO list (name, number)
               VALUES (?, ?)";

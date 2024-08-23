@@ -5,7 +5,7 @@
       <div class="border border-black p-3 rounded">
         <p class="font-medium mb-4 uppercase text-center">Create new contact</p>
 
-        <form>
+        <form action="../api/contacts/POST.php" method="POST">
           <label for="name">Contact name: </label><br>
           <input type="text" name="name" placeholder="Enter name" class="border border-black p-2 mb-2"><br>
           <label for="number">Contact number: </label><br>

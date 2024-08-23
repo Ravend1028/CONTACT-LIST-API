@@ -13,6 +13,13 @@
 
       return $result;
     }
+
+    public function showOneContact($id) {
+      $query = $this->getOneContact($id);
+      $result = $query->fetch(PDO::FETCH_ASSOC);
+
+      return $result;
+    }
   }
 
 ?>
