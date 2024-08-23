@@ -4,7 +4,7 @@
     private $name;
     private $number;
 
-    public function __construct($name, $number) {
+    public function __construct($name = "", $number = "") {
       $this->name = $name;
       $this->number = $number;
     }
@@ -15,11 +15,22 @@
         echo "Input Cannot be empty.";
       }
 
+      // DATA CLEANING IF APPLICABLE
+
       $query = $this->addToContacts($this->name, $this->number);
       $result = $query->rowCount();
 
       return $result;
     }
+
+    //  for exposed url
+    public function createContactViaJSON() {
+      $query = $this->addToContacts($this->name, $this->number);
+      $result = $query->rowCount();
+
+      return $result;
+    }
+
 
     // Validations Here:
 
