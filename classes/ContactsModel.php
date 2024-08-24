@@ -28,8 +28,12 @@
       return $stmt;
     }
 
-    protected function updateContacts() {
-      
+    protected function updateContacts($name, $number, $id) {
+      $sql = "UPDATE list SET name = ?, number = ? WHERE id = ?";
+      $stmt = $this->connect()->prepare($sql);
+      $stmt->execute([$name, $number, $id]);
+
+      return $stmt;
     }
 
     protected function deleteToContacts() {

@@ -15,7 +15,7 @@
         echo "Input Cannot be empty.";
       }
 
-      // DATA CLEANING IF APPLICABLE
+      // Data Cleaning if available - e.g. htmlspecialchars
 
       $query = $this->addToContacts($this->name, $this->number);
       $result = $query->rowCount();
@@ -23,7 +23,7 @@
       return $result;
     }
 
-    //  for exposed url
+    // for exposed url
     public function createContactViaJSON() {
       $query = $this->addToContacts($this->name, $this->number);
       $result = $query->rowCount();
@@ -31,9 +31,15 @@
       return $result;
     }
 
+    public function editContactViaJSON($id) {
+      $query = $this->updateContacts($this->name, $this->number, $id);
+      $result = $query->rowCount();
+
+      return $result;
+    }
+
 
     // Validations Here:
-
     private function emptyInput() {
       if (empty($this->name) || empty($this->number)) {
         return true;

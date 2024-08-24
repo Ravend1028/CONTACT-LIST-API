@@ -39,7 +39,9 @@
       </button>
 
       <button class="bg-fuchsia-400 p-6 font-medium rounded-md">
-        UPDATE CONTACT
+        <a href="update.php">
+          UPDATE CONTACT
+        </a>
       </button>
 
       <button class="bg-red-400 p-6 font-medium rounded-md">
