@@ -28,19 +28,19 @@
   <main>
     <div class="mx-auto container p-6 flex items-center justify-center flex-col space-y-5 space-x-0 md:flex-row md:space-x-5 md:space-y-0">
       <button class="bg-black text-white p-6 font-medium rounded-md">
-        <a href="read.php">
+        <a href="read.php" class="w-full h-full">
           SHOW CONTACT
         </a>
       </button>
 
       <button class="bg-black text-white p-6 font-medium rounded-md">
-        <a href="create.php">
+        <a href="create.php" class="w-full h-full">
           CREATE CONTACT
         </a>
       </button>
 
       <button class="bg-black text-white p-6 font-medium rounded-md">
-        <a href="update.php">
+        <a href="update.php" class="w-full h-full">
           UPDATE CONTACT
         </a>
       </button>

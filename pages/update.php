@@ -5,7 +5,7 @@
       <div class="border border-black p-3 rounded">
         <p class="font-medium mb-4 uppercase text-center">Update Contact</p>
 
-        <form class="update-form" action="" method="PUT">
+        <form class="update-form" method="POST">
           <label for="id">ID: </label><br>
           <input type="text" name="id" placeholder="Enter ID" class="border border-black p-2 mb-2"><br>
           <label for="name">Contact name: </label><br>
