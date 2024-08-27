@@ -46,7 +46,9 @@
       </button>
 
       <button class="bg-black text-white p-6 font-medium rounded-md">
-        DELETE CONTACT
+        <a href="delete.php" class="w-full h-full">
+          DELETE CONTACT
+        </a>
       </button>
     </div>
   </main>

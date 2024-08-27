@@ -36,9 +36,13 @@
       return $stmt;
     }
 
-    protected function deleteToContacts() {
-      
-    }
+    protected function deleteToContacts($id) {
+      $sql = "DELETE FROM list WHERE id = ?";
+      $stmt = $this->connect()->prepare($sql);
+      $stmt->execute([$id]);
+
+      return $stmt;
+    } 
   }
 
 ?>

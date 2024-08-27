@@ -38,6 +38,13 @@
       return $result;
     }
 
+    public function deleteContactViaJSON($id) {
+      $query = $this->deleteToContacts($id);
+      $result = $query->rowCount();
+
+      return $result;
+    }
+
 
     // Validations Here:
     private function emptyInput() {
