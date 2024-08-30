@@ -32,41 +32,81 @@ function initializeEventListeners() {
       }
     });
   }
+
+  const form = document.querySelector('.update-form');
+
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+    
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries()); // Convert FormData to JSON object
+      // console.log(Object.fromEntries(formData));
+      const url = "http://localhost/contact%20list%20api/api/contacts/PUT.php";
+    
+      try {
+        const response = await fetch(url, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json", // Set the correct content type
+          },
+          body: JSON.stringify(data), // Convert the object to a JSON string
+        });
+    
+        if (!response.ok) {
+          throw new Error(`Response status: ${response.status}`);
+        }
+    
+        form.reset();
+    
+        const json = await response.json();
+        alert(json.message); // Handle the response
+        
+      } catch (error) {
+        console.error(error.message);
+      }
+      
+    });
+  }
+
+  const deleteForm = document.querySelector('.delete-form');
+
+  if (deleteForm) {
+    deleteForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+    
+      const formData = new FormData(deleteForm);
+      const data = Object.fromEntries(formData.entries()); // Convert FormData to JSON object
+      // console.log(Object.fromEntries(formData));
+      const url = "http://localhost/contact%20list%20api/api/contacts/DELETE.php";
+    
+      try {
+        const response = await fetch(url, {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json", // Set the correct content type
+          },
+          body: JSON.stringify(data), // Convert the object to a JSON string
+        });
+    
+        if (!response.ok) {
+          throw new Error(`Response status: ${response.status}`);
+        }
+    
+        deleteForm.reset();
+    
+        const json = await response.json();
+        alert(json.message); // Handle the response
+        
+      } catch (error) {
+        console.error(error.message);
+      }
+      
+    });
+  }
+
 }
 
 // Run the function on page load
 document.addEventListener('DOMContentLoaded', initializeEventListeners);
 
-const form = document.querySelector('.update-form');
-
-form.addEventListener('submit', async (e) => {
-  e.preventDefault();
-
-  const formData = new FormData(form);
-  const data = Object.fromEntries(formData.entries()); // Convert FormData to JSON object
-  // console.log(Object.fromEntries(formData));
-  const url = "http://localhost/contact%20list%20api/api/contacts/PUT.php";
-
-  try {
-    const response = await fetch(url, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json", // Set the correct content type
-      },
-      body: JSON.stringify(data), // Convert the object to a JSON string
-    });
-
-    if (!response.ok) {
-      throw new Error(`Response status: ${response.status}`);
-    }
-
-    form.reset();
-
-    const json = await response.json();
-    alert(json.message); // Handle the response
-    
-  } catch (error) {
-    console.error(error.message);
-  }
-  
-});
