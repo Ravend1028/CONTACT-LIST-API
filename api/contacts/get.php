@@ -3,6 +3,13 @@
   header('Access-Control-Allow-Origin: *');
   header('Content-Type: application/json');
 
+  if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
+    // If the request method is not POST, return a 405 Method Not Allowed response
+    header('HTTP/1.1 405 Method Not Allowed');
+    echo json_encode(['message' => 'Method Not Allowed']);
+    exit;
+  }
+
   if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
     $contacts = new ContactsView();

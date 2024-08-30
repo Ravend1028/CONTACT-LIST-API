@@ -7,6 +7,13 @@
     // header('Access-Control-Allow-Methods: POST');
     // header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,Access-Control-Allow-Methods, Authorization, X-Requested-With');
 
+    if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+      // If the request method is not POST, return a 405 Method Not Allowed response
+      header('HTTP/1.1 405 Method Not Allowed');
+      echo json_encode(['message' => 'Method Not Allowed']);
+      exit;
+    }
+
     // COLLECT POST - (Im not sure if this is the right way to handle this)
     $name = $_POST['name'];
     $number = $_POST['number'];
